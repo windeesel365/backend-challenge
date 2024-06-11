@@ -17,5 +17,6 @@ func BeefSummary(c echo.Context) error {
 	}
 
 	counts := wordcount.CountMeats(text)
+
 	return c.JSON(http.StatusOK, map[string]interface{}{"beef": counts})
 }
