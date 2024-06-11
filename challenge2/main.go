@@ -15,7 +15,6 @@ func main() {
 		"==RLL",
 		"=LLRR",
 		"RRL=R",
-		"RLRLRL",
 	}
 
 	for _, encoded := range allCases {
@@ -36,7 +35,7 @@ func main() {
 
 		// validate user input จำนวนcharacters
 		isValid := true
-		if len(userInput) > 5 {
+		if len(userInput) != 5 {
 			isValid = false
 			fmt.Println("Invalid input. Please enter only 5 characters")
 		}

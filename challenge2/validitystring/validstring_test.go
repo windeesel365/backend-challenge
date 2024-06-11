@@ -1,8 +1,7 @@
-package validitystring_test
+package validitystring
 
 import (
 	"bytes"
-	"decodetonum/validitystring"
 	"log"
 	"strings"
 	"testing"
@@ -14,6 +13,7 @@ func TestCheckString(t *testing.T) {
 		expectedOutput string
 	}{
 		{"LL===", ""}, //อันแรกกรณีไม่มี error
+		{"LLRR", "Error: Please ensure to enter 5 characters"},
 		{"LLR=RRL=", "Error: Please ensure to enter 5 characters"},
 		{"LLRMRRL=", "Error: Please ensure to enter 5 characters"},
 		{"LLR=RRLZ", "Error: Please ensure to enter 5 characters"},
@@ -26,7 +26,7 @@ func TestCheckString(t *testing.T) {
 		log.SetOutput(&logBuf)
 		log.SetFlags(0)
 
-		validitystring.CheckString(test.input)
+		CheckString(test.input)
 
 		if !strings.Contains(logBuf.String(), test.expectedOutput) {
 			t.Errorf("For input '%s', expected log output to contain '%s', but got '%s'", test.input, test.expectedOutput, logBuf.String())

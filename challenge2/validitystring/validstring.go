@@ -3,7 +3,7 @@ package validitystring
 import "log"
 
 func CheckString(s string) {
-	if len(s) > 5 {
+	if len(s) != 5 {
 		log.Printf("Error: Please ensure to enter 5 characters")
 		return
 	}
