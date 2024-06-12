@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package countmeat;
+
+service MeatService {
+  rpc GetBeefSummary (BeefRequest) returns (BeefResponse) {}
+}
+
+message BeefRequest {
+  string id = 1;
+}
+
+message BeefResponse {
+  string summary = 1;
+}
