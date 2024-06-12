@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package countmeat;
 
+
 service MeatService {
   rpc GetBeefSummary (BeefRequest) returns (BeefResponse) {}
 }
